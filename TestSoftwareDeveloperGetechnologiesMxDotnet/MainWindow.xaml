@@ -6,21 +6,66 @@
         xmlns:local="clr-namespace:TestSoftwareDeveloperGetechnologiesMxDotnet"
         mc:Ignorable="d"
         Title="MainWindow" Height="450" Width="800">
-
+    
     <Grid>
         <Border Background="LightGray"></Border>
-        <StackPanel 
-            Width="250">
-            <TextBox 
-                Name="Name" TextChanged="Name_TextChanged">
-                
-            </TextBox>
-            <Button 
-                Height="20px"
-                Name="Send"
-                 Content="Enviar" Click="Send_Click">
-                
-            </Button>
-        </StackPanel>
+        <Grid Name="MainLayout">
+            <Grid.RowDefinitions>
+                <RowDefinition Height="*" />
+                <RowDefinition Height="Auto" />
+            </Grid.RowDefinitions>
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="Auto" />
+                <ColumnDefinition Width="*" />
+            </Grid.ColumnDefinitions>
+
+            <!-- Logo -->
+            <Image x:Name="LogoImage"
+                   Source="images/person.png"
+                   Width="100" Height="100"
+                   Margin="130,167,20,167" />
+
+
+            <StackPanel x:Name="FormPanel"
+                        Margin="20"
+                        VerticalAlignment="Center"
+                        HorizontalAlignment="Center">
+                <TextBlock Text="Nombre" Margin="10,0"/>
+                <TextBox x:Name="Name" Margin="5" Width="200" Height="30">
+                   
+                </TextBox>
+                <TextBlock Text="Apellido Paterno" Margin="10,0"/>
+                <TextBox Name="MiddleName" Margin="5" Width="200" Height="30"/>
+                <TextBlock Text="Apellido Materno" Margin="10,0"/>
+                <TextBox Name="LastName" Margin="5" Width="200" Height="30"/>
+                <TextBlock Text="Identificación" Margin="10,0"/>
+                <TextBox Name="Identification" Margin="5" Width="200" Height="30"/>
+                <Button Width="120" Height="30" Name="Send" Content="Enviar" HorizontalAlignment="Center" VerticalAlignment="Center" Click="Button_Send">
+                    
+                    <Button.Template>
+                        <ControlTemplate TargetType="Button">
+                            <Grid>
+                                <Border Background="#007AFF" BorderThickness="2" CornerRadius="10">
+                                    <ContentPresenter HorizontalAlignment="Center" VerticalAlignment="Center" />
+                                </Border>
+                            </Grid>
+                        </ControlTemplate>
+                    </Button.Template>
+                    <Button.Style>
+                        <Style TargetType="Button">
+                            <Setter Property="Foreground" Value="White"/>
+                            <Setter Property="FontSize" Value="12"/>
+                            <Setter Property="FontWeight" Value="Bold"/>
+                            <Setter Property="Padding" Value="8,5"/>
+                            <Setter Property="Cursor" Value="Hand"/>
+                            <Setter Property="Margin" Value="9"/>
+                            
+                        </Style>
+                    </Button.Style>
+                </Button>
+
+            </StackPanel>
+        </Grid>
     </Grid>
+            
 </Window>
