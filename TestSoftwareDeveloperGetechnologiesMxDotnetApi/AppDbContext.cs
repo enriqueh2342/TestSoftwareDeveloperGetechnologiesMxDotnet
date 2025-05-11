@@ -15,8 +15,10 @@ namespace TestSoftwareDeveloperGetechnologiesMxDotnetApi
             modelBuilder.Entity<Bill>()
                 .HasOne(b => b.Person)
                 .WithMany(p => p.Bills)
+                //.HasForeignKey(b => b.PersonIdentification)
                 .HasForeignKey(b => b.PersonId)
                 .OnDelete(DeleteBehavior.Cascade);
+                //.HasPrincipalKey(p => p.Identification);
         }
     }
 }
