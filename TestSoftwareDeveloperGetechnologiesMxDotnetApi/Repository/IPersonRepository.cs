@@ -4,7 +4,10 @@ namespace TestSoftwareDeveloperGetechnologiesMxDotnetApi.Repository
 {
     public interface IPersonRepository
     {
-        Task<Person?> findPersonByIdentification(string identification);
-        Task<IEnumerable<Person>> getAllPersons();
+        Task<IEnumerable<Person>> findPersonasAsync();
+        Task<Person?> findPersonByIdentificationAsync(string identification);
+        Task<int> storePersonAsync(Person person);
+        Task<bool> deletePersonByIdentificationAsync(string identification);
+        Task<Person?> findPersonByIdAsync(int IdPerson);
     }
 }

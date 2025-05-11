@@ -13,6 +13,8 @@ namespace TestSoftwareDeveloperGetechnologiesMxDotnetApi.Models
         public string Amount { get; set; }
         [ForeignKey("Person")]
         public int PersonId { get; set; }
+        //[ForeignKey("Person")]
+        //public string PersonIdentification { get; set; }
         public Person Person { get; set; }
     }
 }
