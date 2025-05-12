@@ -1,0 +1,46 @@
+﻿<Window x:Class="TestSoftwareDeveloperGetechnologiesMxDotnet.GridWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:TestSoftwareDeveloperGetechnologiesMxDotnet"
+        mc:Ignorable="d"
+        Title="GridWindow" Height="450" Width="900">
+
+    <ListView ItemsSource="{Binding MiColeccionDeDatos}">
+        <ListView.View>
+            <GridView>
+                <GridViewColumn Header="Nombre" DisplayMemberBinding="{Binding Name}" Width="150" />
+                <GridViewColumn Header="Monto" DisplayMemberBinding="{Binding Amount}" Width="100" />
+                <GridViewColumn Header="Facturas" DisplayMemberBinding="{Binding BillsCount}" Width="100" />
+                <GridViewColumn Header="Fecha" DisplayMemberBinding="{Binding LastBillDate}" Width="100" />
+                <GridViewColumn Header="RFC" DisplayMemberBinding="{Binding Identification}" Width="150" />
+                <GridViewColumn Header="Acción" Width="100">
+                    <GridViewColumn.CellTemplate>
+                        <DataTemplate>
+                            <Button Content="Eliminar" 
+                                    Click="EliminarPersona_Click"
+                                    CommandParameter="{Binding}"
+                                    Margin="2" 
+                                    Padding="5 2"
+                                    HorizontalAlignment="Center"/>
+                        </DataTemplate>
+                    </GridViewColumn.CellTemplate>
+                </GridViewColumn>
+                <GridViewColumn Header="" Width="100">
+                    <GridViewColumn.CellTemplate>
+                        <DataTemplate>
+                            <Button Content="Regresar" 
+                         Click="Regresar_Click"
+                         CommandParameter="{Binding}"
+                         Margin="2" 
+                         Padding="5 2"
+                         HorizontalAlignment="Center"/>
+                        </DataTemplate>
+                    </GridViewColumn.CellTemplate>
+                </GridViewColumn>
+            </GridView>
+        </ListView.View>
+    </ListView>
+    
+</Window>

@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Reflection;
 using System.Text;
 using System.Threading.Tasks;
 using TestSoftwareDeveloperGetechnologiesMxDotnet.Models;
@@ -18,7 +19,7 @@ namespace TestSoftwareDeveloperGetechnologiesMxDotnet.Tools
                 return (false, "Ingrese el Apellido Paterno");
 
             if (string.IsNullOrEmpty(person.Identification))
-                return (false, "Ingrese su Curp");
+                return (false, "Ingrese su RFC");
 
             return (true, string.Empty);
         }

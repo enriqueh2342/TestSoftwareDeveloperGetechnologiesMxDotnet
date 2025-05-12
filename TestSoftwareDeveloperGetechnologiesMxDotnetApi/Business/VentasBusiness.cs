@@ -21,7 +21,7 @@ namespace TestSoftwareDeveloperGetechnologiesMxDotnetApi.Business
             return billsFound.ToList();
         }
 
-        public async Task<GenericResponse> storeBillAsync(Bill bill, string identificationPerson)
+        public async Task<GenericResponse> storeBillAsync(DTOBill bill, string identificationPerson)
         {
             var personFound = await _personrepository.findPersonByIdentificationAsync(identificationPerson);
             if (personFound == null)
@@ -34,7 +34,7 @@ namespace TestSoftwareDeveloperGetechnologiesMxDotnetApi.Business
                 };
             }
 
-            var newbillId = await _facturaRepository.storeBillAsync(bill);
+            var newbillId = await _facturaRepository.storeBillAsync(bill, personFound.Id);
             if (newbillId == 0)
             {
                 return new GenericResponse

@@ -6,6 +6,6 @@ namespace TestSoftwareDeveloperGetechnologiesMxDotnetApi.Business
     public interface IVentasBusiness
     {
         Task<IEnumerable<Bill>> findBillsByPersonAsync(string identificationPersona);
-        Task<GenericResponse> storeBillAsync(Bill bill, string identificationPerson);
+        Task<GenericResponse> storeBillAsync(DTOBill bill, string identificationPerson);
     }
 }

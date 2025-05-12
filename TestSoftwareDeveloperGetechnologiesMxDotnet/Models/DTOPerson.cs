@@ -6,14 +6,17 @@ using System.Threading.Tasks;
 
 namespace TestSoftwareDeveloperGetechnologiesMxDotnet.Models
 {
-    public class Person
+    public class DTOPerson
     {
         public int Id { get; set; }
         public string Name { get; set; }
         public string MiddleName { get; set; }
         public string LastName { get; set; }
+        public int? BillsCount { get; set; }
+        public float? Amount { get; set; }
         public string Identification { get; set; }
-        public ICollection<Bill> Bills { get; set; } = new List<Bill>();
+        public DateTime? LastBillDate { get; set; }
+
 
     }
 }
