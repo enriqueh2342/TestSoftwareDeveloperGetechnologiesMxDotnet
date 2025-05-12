@@ -1,6 +1,7 @@
 ﻿using Microsoft.EntityFrameworkCore;
 using TestSoftwareDeveloperGetechnologiesMxDotnetApi.Commons;
 using TestSoftwareDeveloperGetechnologiesMxDotnetApi.Models;
+using TestSoftwareDeveloperGetechnologiesMxDotnetApi.Schemas;
 
 namespace TestSoftwareDeveloperGetechnologiesMxDotnetApi.Repository
 {
@@ -18,12 +19,16 @@ namespace TestSoftwareDeveloperGetechnologiesMxDotnetApi.Repository
             return bills;
         }
 
-        public async Task<int> storeBillAsync(Bill bill)
+        public async Task<int> storeBillAsync(DTOBill dtobill, int IdPerson)
         {
+            Bill bill = new Bill();
             try
             {
                 bill.CreatedBy = (int)UsersEnum.Administrator;
                 bill.CreatedDate = DateTime.Now;
+                bill.Amount = dtobill.Amount;
+                bill.Date = dtobill.Date;
+                bill.PersonId = IdPerson;
                 _context.Bills.Add(bill);
                 await _context.SaveChangesAsync();
                 return bill.Id;

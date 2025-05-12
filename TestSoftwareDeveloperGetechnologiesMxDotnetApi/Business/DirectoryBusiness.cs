@@ -46,7 +46,7 @@ namespace TestSoftwareDeveloperGetechnologiesMxDotnetApi.Business
                 {
                     Code = System.Net.HttpStatusCode.Forbidden,
                     Message = "La persona ya existe",
-                    Data = null
+                    Data = personFound.Id
                 };
             }
 
@@ -97,7 +97,7 @@ namespace TestSoftwareDeveloperGetechnologiesMxDotnetApi.Business
             {
                 Code = System.Net.HttpStatusCode.OK,
                 Message = "Se eliminó la persona correctamente",
-                Data = true
+                Data = 1
             };
 
         }

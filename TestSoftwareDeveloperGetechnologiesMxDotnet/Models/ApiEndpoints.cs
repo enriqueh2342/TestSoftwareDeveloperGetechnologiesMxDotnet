@@ -10,5 +10,7 @@ namespace TestSoftwareDeveloperGetechnologiesMxDotnet.Models
     {
         public const string BaseUrl = "https://localhost:7083";
         public const string WeatherForecastEndpoint = "WeatherForecast";
+        public const string DirectoryEndpoint = "DirectorioRestService";
+        public const string FacturaEndpoint = "FacturaRestService";
     }
 }

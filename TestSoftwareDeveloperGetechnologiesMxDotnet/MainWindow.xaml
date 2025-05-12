@@ -40,7 +40,9 @@
                 <TextBox Name="LastName" Margin="5" Width="200" Height="30"/>
                 <TextBlock Text="Identificación" Margin="10,0"/>
                 <TextBox Name="Identification" Margin="5" Width="200" Height="30"/>
-                <Button Width="120" Height="30" Name="Send" Content="Enviar" HorizontalAlignment="Center" VerticalAlignment="Center" Click="Button_Send">
+                <TextBlock Text="Monto" Margin="10,0"/>
+                <TextBox Name="Amount" Margin="5" Width="200" Height="30"/>
+                <Button Width="120" Height="30" Name="Send" Content="Guardar Factura" HorizontalAlignment="Center" VerticalAlignment="Center" Click="Button_Send">
                     
                     <Button.Template>
                         <ControlTemplate TargetType="Button">

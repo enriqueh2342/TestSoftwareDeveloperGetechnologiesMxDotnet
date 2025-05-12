@@ -2,6 +2,7 @@
 using Microsoft.AspNetCore.Mvc;
 using TestSoftwareDeveloperGetechnologiesMxDotnetApi.Business;
 using TestSoftwareDeveloperGetechnologiesMxDotnetApi.Models;
+using TestSoftwareDeveloperGetechnologiesMxDotnetApi.Schemas;
 
 namespace TestSoftwareDeveloperGetechnologiesMxDotnetApi.Controllers
 {
@@ -25,7 +26,7 @@ namespace TestSoftwareDeveloperGetechnologiesMxDotnetApi.Controllers
         }
 
         [HttpPost(Name = "FacturaRestService")]
-        public async Task<IActionResult> Post(Bill bill, string identificationPerson)
+        public async Task<IActionResult> Post([FromBody]DTOBill bill, [FromQuery]string identificationPerson)
         {
             var result = await _ventasBusiness.storeBillAsync(bill, identificationPerson);
             return new ObjectResult(result)
